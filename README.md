@@ -38,13 +38,16 @@ See the [crate documentation](https://docs.rs/half/) for more details.
 - **`serde`** - Implement `Serialize` and `Deserialize` traits for `f16` and `bf16`. This adds a
   dependency on the [`serde`](https://crates.io/crates/serde) crate.
 
+- **`speedy`** - Implement `Writable` and `Readable` traits for `f16` and `bf16`. This adds a
+  dependency on the [`speedy`](https://crates.io/crates/speedy) crate.
+
 - **`num-traits`** — Enable `ToPrimitive`, `FromPrimitive`, `Num`, `Float`, `FloatCore` and
   `Bounded` trait implementations from the [`num-traits`](https://crates.io/crates/num-traits) crate.
 
 - **`bytemuck`** — Enable `Zeroable` and `Pod` trait implementations from the
   [`bytemuck`](https://crates.io/crates/bytemuck) crate.
 
-- **`zerocopy`** — Enable `AsBytes` and `FromBytes` trait implementations from the 
+- **`zerocopy`** — Enable `AsBytes` and `FromBytes` trait implementations from the
   [`zerocopy`](https://crates.io/crates/zerocopy) crate.
 
 - **`rand_distr`** — Enable sampling from distributions like `Uniform` and `Normal` from the

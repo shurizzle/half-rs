@@ -87,6 +87,9 @@
 //! - **`serde`** — Adds support for the [`serde`] crate by implementing [`Serialize`] and
 //!   [`Deserialize`] traits for both [`f16`] and [`bf16`].
 //!
+//! - **`speedy`** — Adds support for the [`speedy`] crate by implementing [`Writable`] and
+//!   [`Readable`] traits for both [`f16`] and [`bf16`].
+//!
 //! - **`num-traits`** — Adds support for the [`num-traits`] crate by implementing [`ToPrimitive`],
 //!   [`FromPrimitive`], [`AsPrimitive`], [`Num`], [`Float`], [`FloatCore`], and [`Bounded`] traits
 //!   for both [`f16`] and [`bf16`].
@@ -107,6 +110,7 @@
 //! [`binary16`]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format
 //! [`bfloat16`]: https://en.wikipedia.org/wiki/Bfloat16_floating-point_format
 //! [`serde`]: https://crates.io/crates/serde
+//! [`speedy`]: https://crates.io/crates/speedy
 //! [`bytemuck`]: https://crates.io/crates/bytemuck
 //! [`num-traits`]: https://crates.io/crates/num-traits
 //! [`zerocopy`]: https://crates.io/crates/zerocopy
@@ -134,6 +138,18 @@
     doc = "
 [`Serialize`]: https://docs.rs/serde/*/serde/trait.Serialize.html
 [`Deserialize`]: https://docs.rs/serde/*/serde/trait.Deserialize.html"
+)]
+#![cfg_attr(
+    feature = "speedy",
+    doc = "
+[`Writable`]: speedy::Writable
+[`Readable`]: speedy::Readable"
+)]
+#![cfg_attr(
+    not(feature = "speedy"),
+    doc = "
+[`Writable`]: https://docs.rs/speedy/*/speedy/trait.Writable.html
+[`Readable`]: https://docs.rs/speedy/*/speedy/trait.Readable.html"
 )]
 #![cfg_attr(
     feature = "num-traits",
